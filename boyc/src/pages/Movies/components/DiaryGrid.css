@@ -1,0 +1,44 @@
+.diary-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 15rem));
+  justify-content: start;
+  padding: 2rem 2rem;
+}
+
+/* Tablet: adjust for smaller screens */
+@media (max-width: 1400px) {
+  .diary-grid {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 15rem));
+    justify-content: center;
+  }
+}
+
+/* Mobile: make cards responsive */
+@media (max-width: 768px) {
+  .diary-grid {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .diary-grid .movie-card {
+    width: 100%;
+    max-width: 15rem;
+    margin: 0 auto;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--deep-black);
+  border: 2px dashed var(--dark-gray);
+  border-radius: 8px;
+}
+
+.empty-message {
+  color: var(--light-gray);
+  font-size: 1.2rem;
+  margin: 0;
+}

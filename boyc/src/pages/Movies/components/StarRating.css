@@ -1,0 +1,33 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-gray);
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.star.active {
+  color: var(--primary-yellow);
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.rating-value {
+  font-size: 1rem;
+  color: var(--primary-yellow);
+  font-weight: 600;
+  min-width: 50px;
+}

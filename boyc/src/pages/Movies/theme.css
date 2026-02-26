@@ -1,0 +1,7 @@
+/* Global Theme Styles */
+.movie-diary-container {
+  background-color: var(--deep-black);
+  color: var(--white);
+  min-height: 100vh;
+  padding: 2rem;
+}

@@ -1,0 +1,37 @@
+:root {
+  --primary-yellow: #FFD700; /* Vibrant Gold/Yellow */
+  --bg-black: #0D0D0D;      /* Deep Black */
+  --deep-black: #0D0D0D;    /* Alias for consistency */
+  --surface-gray: #1A1A1A;   /* Secondary Dark */
+  --dark-gray: #1A1A1A;      /* Alias for consistency */
+  --text-white: #FFFFFF;
+  --white: #FFFFFF;          /* Alias for consistency */
+  --light-gray: #BBBBBB;     /* Light text */
+  --border-color: #333333;   /* Borders */
+  --disabled-text: #666666;  /* Disabled state */
+  --error-red: #FF4444;      /* Error/Logout color */
+}
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none; /* This removes the restricted 'container' width */
+  text-align: left; /* Prevents everything from being forced-centered */
+}
+
+.landing-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--deep-black, #0D0D0D);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  overflow-x: hidden;
+}

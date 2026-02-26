@@ -1,0 +1,206 @@
+.topnav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--deep-black, #0D0D0D);
+  padding: 1rem 5%;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--dark-gray, #1A1A1A);
+}
+
+/* Left Section: Logo & Burger */
+.topnav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary-yellow, #FFD700);
+  letter-spacing: -1px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+  animation: filmRoll 3s ease-in-out infinite;
+}
+
+@keyframes filmRoll {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+.brand-logo span {
+  color: var(--white, #FFFFFF);
+}
+
+/* Middle Section: Links */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: var(--light-gray, #BBBBBB);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-item:hover {
+  color: var(--primary-yellow, #FFD700);
+}
+
+.nav-item.active {
+  color: var(--primary-yellow, #FFD700);
+  position: relative;
+}
+
+/* Yellow indicator line under active link */
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-yellow, #FFD700);
+}
+
+/* Right Section: Mini Search */
+
+.loginBtn{
+  background-color: var(--error-red, #FF4444);
+  border: var(--error-red, #FF4444) solid 5px;
+}
+/* User Menu Styles */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  color: var(--primary-yellow, #FFD700);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.login-btn,
+.settings-btn,
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.login-btn {
+  background-color: var(--primary-yellow, #FFD700);
+  color: var(--deep-black, #0D0D0D);
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.settings-btn {
+  background-color: transparent;
+  color: var(--primary-yellow, #FFD700);
+  border: 2px solid var(--primary-yellow, #FFD700);
+}
+
+.settings-btn:hover {
+  background-color: var(--primary-yellow, #FFD700);
+  color: var(--deep-black, #0D0D0D);
+}
+
+.logout-btn {
+  background-color: transparent;
+  color: var(--error-red, #FF4444);
+  border: 2px solid var(--error-red, #FF4444);
+}
+
+.logout-btn:hover {
+  background-color: var(--error-red, #FF4444);
+  color: var(--white, #FFFFFF);
+}
+
+@media (max-width: 768px) {
+  .user-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .username {
+    font-size: 0.8rem;
+  }
+  
+  .login-btn,
+  .settings-btn,
+  .logout-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Right Section: Search & Auth */
+.topnav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .topnav-right {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .topnav-right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .user-menu {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .username {
+    font-size: 0.75rem;
+  }
+  
+  .settings-btn,
+  .logout-btn,
+  .login-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

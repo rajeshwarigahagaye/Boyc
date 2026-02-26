@@ -1,0 +1,32 @@
+.search-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search-label {
+  color: var(--primary-yellow);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.search-input {
+  padding: 0.75rem 1rem;
+  background-color: var(--deep-black);
+  border: 2px solid var(--dark-gray);
+  border-radius: 4px;
+  color: var(--white);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-yellow);
+}
+
+.search-input::placeholder {
+  color: var(--disabled-text);
+}

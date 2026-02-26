@@ -1,0 +1,190 @@
+.search-bar-container {
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-gray, #1A1A1A);
+  border: 2px solid var(--border-color, #333333);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+  min-width: 300px;
+}
+
+.search-bar:focus-within {
+  border-color: var(--primary-yellow, #FFD700);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+.search-icon {
+  color: var(--primary-yellow, #FFD700);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: var(--white, #FFFFFF);
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+  min-width: 0;
+}
+
+.search-input::placeholder {
+  color: var(--disabled-text, #666666);
+}
+
+.clear-btn,
+.filter-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--light-gray, #BBBBBB);
+  flex-shrink: 0;
+}
+
+.clear-btn {
+  font-size: 0.9rem;
+}
+
+.clear-btn:hover {
+  color: var(--error-red, #FF4444);
+  transform: scale(1.1);
+}
+
+.filter-btn {
+  font-size: 1rem;
+  position: relative;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--primary-yellow, #FFD700);
+  transform: scale(1.1);
+}
+
+.filter-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-yellow, #FFD700);
+  border-radius: 50%;
+  border: 2px solid var(--dark-gray, #1A1A1A);
+}
+
+/* Genre Dropdown */
+.genre-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: var(--dark-gray, #1A1A1A);
+  border: 2px solid var(--primary-yellow, #FFD700);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.genre-dropdown-header {
+  color: var(--primary-yellow, #FFD700);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color, #333333);
+  margin-bottom: 0.5rem;
+}
+
+.genre-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.genre-item {
+  background: transparent;
+  border: none;
+  color: var(--light-gray, #BBBBBB);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.genre-item:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+  color: var(--white, #FFFFFF);
+}
+
+.genre-item.active {
+  background-color: var(--primary-yellow, #FFD700);
+  color: var(--deep-black, #0D0D0D);
+  font-weight: 600;
+}
+
+/* Scrollbar styling for genre dropdown */
+.genre-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.genre-dropdown::-webkit-scrollbar-track {
+  background: var(--deep-black, #0D0D0D);
+  border-radius: 3px;
+}
+
+.genre-dropdown::-webkit-scrollbar-thumb {
+  background: var(--primary-yellow, #FFD700);
+  border-radius: 3px;
+}
+
+.genre-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--light-gray, #BBBBBB);
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    min-width: 200px;
+  }
+
+  .search-input {
+    font-size: 0.85rem;
+  }
+
+  .genre-dropdown {
+    right: auto;
+    left: 0;
+    min-width: 100%;
+  }
+}

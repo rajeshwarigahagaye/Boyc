@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  display: block; /* Change from 'flex' if it's there */
+  place-items: unset;
+  min-width: 100vw;
+  min-height: 100vh;
+}
