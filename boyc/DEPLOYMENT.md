@@ -83,18 +83,52 @@ VITE_API_URL=https://your-backend-api.com/api
    - Add your secrets
    - Reference them in the workflow file
 
-## Backend API Note
+## Backend API Deployment
 
-⚠️ **Important**: GitHub Pages only hosts static files (frontend). Your backend API needs to be deployed separately:
+⚠️ **CRITICAL**: GitHub Pages only hosts static files (your React frontend). Your backend server (Node.js/Express/MongoDB) **MUST** be deployed separately!
 
-- **Backend options**:
-  - Heroku
-  - Railway
-  - Render
-  - Vercel (for serverless functions)
-  - AWS/Azure/Google Cloud
+### Why You're Seeing "Cannot connect to server"
 
-- **Update API URL**: After deploying backend, update `VITE_API_URL` in your environment variables
+GitHub Pages cannot run:
+- ❌ Node.js servers
+- ❌ Express APIs
+- ❌ MongoDB databases
+- ❌ Any backend code
+
+### Solution: Deploy Backend Separately
+
+**See `BACKEND_DEPLOYMENT.md` for detailed instructions.**
+
+Quick options:
+1. **Render.com** (Recommended - Free tier)
+   - Easy setup
+   - Free 750 hours/month
+   - Auto-deploys from GitHub
+
+2. **Railway.app** (Free $5 credit/month)
+   - No spin-down
+   - Very fast
+
+3. **Fly.io** (Free tier)
+   - Production-ready
+   - More complex setup
+
+### After Deploying Backend
+
+1. Get your backend URL (e.g., `https://boyc-backend.onrender.com`)
+2. Update `boyc/.env`:
+   ```env
+   VITE_API_URL=https://your-backend-url.com/api
+   ```
+3. Rebuild and redeploy frontend:
+   ```bash
+   npm run build
+   git add .
+   git commit -m "Update API URL"
+   git push
+   ```
+
+**📖 Full backend deployment guide**: See `BACKEND_DEPLOYMENT.md`
 
 ## Custom Domain (Optional)
 

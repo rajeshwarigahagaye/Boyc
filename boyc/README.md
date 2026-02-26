@@ -1,161 +1,293 @@
-# BOYC - Movie Critic Diary
+# BOYC - Movie Critic Diary 🎬
 
-A full-stack Movie Critic Diary application with a cyberpunk-inspired theme. Built with React, Vite, Node.js, Express, and MongoDB.
+A full-stack web application for tracking and reviewing movies/dramas with customizable themes and powerful search functionality.
 
-## Features
+![BOYC Banner](public/ceri.jpg)
 
-- 10-star rating system for movie reviews
-- Add, view, search, and delete movie reviews
-- User authentication with JWT
-- Customizable theme colors (persisted per user)
-- Responsive design with cyberpunk aesthetics
-- MongoDB backend for data persistence
+## 🌟 Features
 
-## Tech Stack
+- **User Authentication** - Secure registration and login with JWT
+- **Movie Reviews** - Add, edit, delete, and rate movies (1-5 stars)
+- **Custom Themes** - Personalize colors (primary and secondary)
+- **Global Search** - Real-time search by name, genre, or origin
+- **Genre Filtering** - Filter reviews by genre with dropdown
+- **Responsive Design** - Works on desktop, tablet, and mobile
+- **Persistent Storage** - MongoDB database for permanent data
+- **Modern UI** - Clean, dark theme with yellow accents
 
-**Frontend:**
+## 🚀 Live Demo
+
+- **Frontend**: [https://rajeshwarigahagaye.github.io/Boyc/](https://rajeshwarigahagaye.github.io/Boyc/)
+- **Backend**: Deployed on Render.com
+
+## 📸 Screenshots
+
+### Home Page
+Modern landing page with search functionality
+
+### Movie Library
+Grid view of all your movie reviews with ratings
+
+### Add Review
+Comprehensive form for adding movie details
+
+### Theme Customization
+Personalize your experience with custom colors
+
+## 🛠️ Tech Stack
+
+### Frontend
 - React 18
 - Vite
-- React Router
+- React Router v6
 - Axios
-- Context API for state management
+- React Icons
+- CSS Variables (for theming)
 
-**Backend:**
+### Backend
 - Node.js
-- Express
-- MongoDB with Mongoose
-- JWT authentication
-- bcryptjs for password hashing
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- bcrypt (password hashing)
 
-## Quick Start
+### Deployment
+- Frontend: GitHub Pages
+- Backend: Render.com
+- Database: MongoDB Atlas
 
-### Prerequisites
+## 📋 Prerequisites
 
-- Node.js (v16 or higher)
-- MongoDB (v5 or higher)
-- npm or yarn
+- Node.js 18+ 
+- MongoDB (local or Atlas)
+- Git
 
-### 1. Clone and Install
+## 🔧 Local Development Setup
 
+### 1. Clone Repository
 ```bash
-# Install frontend dependencies
-npm install
-
-# Install backend dependencies
-cd server
-npm install
-cd ..
+git clone https://github.com/rajeshwarigahagaye/Boyc.git
+cd Boyc
 ```
 
-### 2. Setup MongoDB
-
-**Install MongoDB:**
-- Windows: Download from https://www.mongodb.com/try/download/community
-- Mac: `brew install mongodb-community`
-- Linux: Follow official MongoDB installation guide
-
-**Start MongoDB:**
+### 2. Setup Backend
 ```bash
-# Windows (run as service or)
-mongod
+cd boyc/server
+npm install
+cp .env.example .env
+# Edit .env with your MongoDB URI and JWT secret
+npm start
+```
 
-# Mac/Linux
+Backend runs on `http://localhost:5000`
+
+### 3. Setup Frontend
+```bash
+cd boyc
+npm install
+cp .env.example .env
+# Edit .env if needed (default: http://localhost:5000/api)
+npm run dev
+```
+
+Frontend runs on `http://localhost:5173`
+
+### 4. Start MongoDB
+```bash
+# Windows
+net start MongoDB
+
+# macOS
 brew services start mongodb-community
-# or
+
+# Linux
 sudo systemctl start mongod
 ```
 
-### 3. Configure Environment Variables
+## 📦 Production Deployment
 
-**Frontend (.env):**
-```bash
-cp .env.example .env
+### Quick Start (3 Steps)
+
+1. **Deploy Backend to Render.com**
+   - Create MongoDB Atlas account (free)
+   - Deploy to Render.com (free tier)
+   - Set environment variables
+
+2. **Update Frontend Configuration**
+   - Update `VITE_API_URL` in `.env`
+   - Commit and push to GitHub
+
+3. **GitHub Pages Auto-Deploys**
+   - Wait for GitHub Actions to complete
+   - Visit your live site!
+
+**📖 Detailed Guide**: See `PRODUCTION_DEPLOYMENT_QUICKSTART.md`
+
+## 📚 Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started quickly
+- **[SETUP.md](SETUP.md)** - Detailed setup instructions
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Frontend deployment guide
+- **[BACKEND_DEPLOYMENT.md](BACKEND_DEPLOYMENT.md)** - Backend deployment guide
+- **[PRODUCTION_DEPLOYMENT_QUICKSTART.md](PRODUCTION_DEPLOYMENT_QUICKSTART.md)** - Quick production setup
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Common issues and solutions
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System architecture overview
+- **[API_INTEGRATION.md](API_INTEGRATION.md)** - API usage guide
+- **[SEARCH_FEATURE.md](SEARCH_FEATURE.md)** - Search functionality details
+- **[DATA_STORAGE_LOCATION.md](DATA_STORAGE_LOCATION.md)** - Database information
+
+## 🎯 Usage
+
+### Register/Login
+1. Click "Login" button in navigation
+2. Register a new account or login
+3. Your session persists for 7 days
+
+### Add Movie Review
+1. Navigate to "Add Review"
+2. Fill in movie details:
+   - Name (required)
+   - Image URL
+   - Genre
+   - Origin
+   - Number of Episodes
+   - Description
+   - Your Point of View
+   - Rating (1-5 stars)
+3. Click "Add Review"
+
+### View Library
+1. Navigate to "Library"
+2. See all your reviews in a grid
+3. Click any card to view full details
+4. Edit or delete from the modal
+
+### Search & Filter
+1. Use search bar in top navigation
+2. Type to search by name, genre, or origin
+3. Click filter icon to select genre
+4. Clear filters with X button
+
+### Customize Theme
+1. Click settings icon (gear) when logged in
+2. Choose primary color (default: gold)
+3. Choose secondary color (default: black)
+4. Click "Save Theme"
+5. Theme persists across sessions
+
+## 🔑 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+
+### Reviews
+- `GET /api/reviews` - Get all user's reviews
+- `POST /api/reviews` - Create new review
+- `PUT /api/reviews/:id` - Update review
+- `DELETE /api/reviews/:id` - Delete review
+- `GET /api/reviews/search?q=query` - Search reviews
+
+### Users
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/theme` - Update theme preferences
+
+### Health Check
+- `GET /api/health` - Server status
+
+## 🗄️ Database Schema
+
+### User
+```javascript
+{
+  username: String (unique, min 3 chars),
+  email: String (unique, valid email),
+  password: String (hashed),
+  primaryColor: String (default: '#FFD700'),
+  secondaryColor: String (default: '#0D0D0D'),
+  createdAt: Date
+}
 ```
 
-Edit `.env`:
-```
-VITE_API_URL=http://localhost:5000/api
-```
-
-**Backend (server/.env):**
-```bash
-cd server
-cp .env.example .env
-```
-
-Edit `server/.env`:
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/boyc-movie-diary
-JWT_SECRET=your_secret_key_change_this_in_production
-NODE_ENV=development
+### Review
+```javascript
+{
+  userId: ObjectId (ref: User),
+  name: String (required),
+  imageUrl: String,
+  genre: String,
+  dramaOrigin: String,
+  numberOfEP: Number,
+  description: String,
+  yourPOV: String,
+  rating: Number (1-5),
+  createdAt: Date,
+  updatedAt: Date
+}
 ```
 
-### 4. Start the Application
+## 🐛 Troubleshooting
 
-**Terminal 1 - Backend:**
-```bash
-cd server
-npm run dev
-```
+### "Cannot connect to server"
+- Backend not running → Start backend server
+- Wrong API URL → Check `.env` file
+- CORS error → Add your domain to CORS origins
 
-**Terminal 2 - Frontend:**
-```bash
-npm run dev
-```
+### Registration Failed
+- Server not running → Start backend
+- MongoDB not connected → Start MongoDB
+- Username/email exists → Try different credentials
 
-The app will be available at `http://localhost:5173`
+### Theme Not Saving
+- Not logged in → Login first
+- Backend error → Check server logs
+- Network error → Check API connection
 
-## Usage
+**📖 Full troubleshooting guide**: See `TROUBLESHOOTING.md`
 
-1. Click "Login" to register a new account or login
-2. Once logged in, you can:
-   - Add movie reviews with title, poster URL, rating, and review text
-   - View all your reviews in the Library
-   - Search and sort reviews
-   - Delete reviews
-   - Customize theme colors in Settings
-3. Non-logged users can browse and search but cannot add/delete reviews
+## 🤝 Contributing
 
-## Project Structure
+Contributions are welcome! Please follow these steps:
 
-```
-boyc/
-├── src/                    # Frontend source
-│   ├── components/         # Reusable components
-│   ├── context/           # React Context providers
-│   ├── pages/             # Page components
-│   ├── services/          # API service layer
-│   └── App.jsx            # Main app component
-├── server/                # Backend source
-│   ├── models/            # MongoDB models
-│   ├── routes/            # API routes
-│   ├── middleware/        # Auth middleware
-│   └── server.js          # Express server
-└── public/                # Static assets
-```
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## API Documentation
+## 📝 License
 
-See [server/README.md](server/README.md) for detailed API documentation.
+This project is licensed under the MIT License.
 
-## Development
+## 👤 Author
 
-```bash
-# Frontend dev server with hot reload
-npm run dev
+**Rajeshwari Gahagaye**
+- GitHub: [@rajeshwarigahagaye](https://github.com/rajeshwarigahagaye)
 
-# Backend dev server with nodemon
-cd server
-npm run dev
+## 🙏 Acknowledgments
 
-# Build for production
-npm run build
+- React Icons for beautiful icons
+- MongoDB Atlas for free database hosting
+- Render.com for free backend hosting
+- GitHub Pages for free frontend hosting
 
-# Preview production build
-npm run preview
-```
+## 📞 Support
 
-## License
+If you have any questions or issues:
+1. Check the documentation files listed above
+2. Open an issue on GitHub
+3. Review the troubleshooting guide
 
-MIT
+## 🎉 Features Coming Soon
+
+- [ ] Social sharing of reviews
+- [ ] Follow other users
+- [ ] Review comments
+- [ ] Movie recommendations
+- [ ] Export reviews to PDF
+- [ ] Mobile app version
+- [ ] Email notifications
+
+---
+
+Made with ❤️ by Rajeshwari Gahagaye
