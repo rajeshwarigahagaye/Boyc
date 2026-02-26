@@ -131,11 +131,19 @@
   background-color: transparent;
   color: var(--primary-yellow, #FFD700);
   border: 2px solid var(--primary-yellow, #FFD700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-btn svg {
+  font-size: 1rem;
 }
 
 .settings-btn:hover {
   background-color: var(--primary-yellow, #FFD700);
   color: var(--deep-black, #0D0D0D);
+  transform: scale(1.05);
 }
 
 .logout-btn {

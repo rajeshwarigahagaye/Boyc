@@ -1,4 +1,4 @@
-import React from "react";
+import { FaSearch } from 'react-icons/fa';
 import './Hero.css'
 
 export default function Hero() {
@@ -12,7 +12,9 @@ export default function Hero() {
           
           <div className="search-container">
             <input type="text" placeholder="Search anime..." className="search-input" />
-            <button className="search-btn">🔍</button>
+            <button className="search-btn">
+              <FaSearch />
+            </button>
           </div>
 
           <div className="top-search-tags">

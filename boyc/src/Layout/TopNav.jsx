@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaFilm } from 'react-icons/fa';
+import { FaFilm, FaCog } from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
 import LoginModal from '../components/LoginModal';
 import SettingsModal from '../components/SettingsModal';
@@ -49,7 +49,7 @@ const TopNav = () => {
             <div className="user-menu">
               <span className="username">👤 {username}</span>
               <button className="settings-btn" onClick={() => setShowSettingsModal(true)}>
-                ⚙️
+                <FaCog />
               </button>
               <button className="logout-btn" onClick={logout}>
                 Logout
