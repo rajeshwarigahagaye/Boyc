@@ -14,7 +14,7 @@ function App() {
     <AuthProvider>
       <ThemeProvider>
         <SearchProvider>
-          <Router basename="/Boyc">
+          <Router basename="/boyc">
             <div className="landing-container">
               <TopNav />
               <Routes>
