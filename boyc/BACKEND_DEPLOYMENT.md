@@ -45,6 +45,7 @@ services:
 5. Copy the connection string (looks like):
    ```
    mongodb+srv://username:<password>@cluster0.xxxxx.mongodb.net/boyc-movie-diary
+   
    ```
 6. Replace `<password>` with your actual password
 

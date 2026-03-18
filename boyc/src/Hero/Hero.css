@@ -59,6 +59,7 @@ body {
   align-items: center;
   background: white;
   border-radius: 50px;
+  
   padding: 5px 10px;
   outline: var(--primary-yellow, #FFD700) 2px solid;
   /* --- KEY CHANGES BELOW --- */
@@ -70,6 +71,7 @@ body {
 .search-input {
   flex-grow: 1;          /* This ensures the text area fills the extra space */
   border: none;
+  color: black;
   outline: none;
   padding: 15px 20px;
   font-size: 1.2rem;     /* Slightly larger font for a longer bar */
